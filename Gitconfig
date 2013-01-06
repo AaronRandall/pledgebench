@@ -1,0 +1,20 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+[remote "origin"]
+	fetch = +refs/heads/*:refs/remotes/origin/*
+	url = git@heroku.com:pledgebench.git
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[remote "all"]
+	url = git@github.com:AaronRandall/pledgebench.git
+	fetch = +refs/heads/*:refs/remotes/all/*
+	pushurl = git@heroku.com:pledgebench.git
+	pushurl = git@github.com:AaronRandall/pledgebench.git
+
+# git remote set-url --add --push all git@heroku.com:pledgebench.git
+# git remote set-url --add --push all git@github.com:AaronRandall/pledgebench.git
