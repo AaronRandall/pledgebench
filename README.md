@@ -1,8 +1,6 @@
 pledgebench
 ===========
 
-# Setup
-
 # Checkout from heroku
 
     git clone git@heroku.com:pledgebench.git
