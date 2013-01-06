@@ -3,13 +3,16 @@ pledgebench
 
 # Setup
 
-Checkout from heroku
-  git clone git@heroku.com:pledgebench.git
+# Checkout from heroku
 
-Setup remote branches
-  cp Gitconfig .git/config
+    git clone git@heroku.com:pledgebench.git
 
-Code!
+# Setup remote branches
 
-Commit
-  git push all --all
+    cp Gitconfig .git/config
+
+# Code!
+
+# Commit
+
+    git push all --all
