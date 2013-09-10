@@ -1,6 +1,5 @@
 pledgebench
 ===========
-
 Setup
 
 1. Checkout from heroku
