@@ -821,7 +821,7 @@ footer {
 	line-height: 1.1;
 }
 .tp-loader {
-    background: url(../img/loading.gif) no-repeat;
+    background: url(/assets/shadowbox/loading.gif) no-repeat;
     background-color: #fafafa;
     margin: -15px -15px;
     top: 50%;

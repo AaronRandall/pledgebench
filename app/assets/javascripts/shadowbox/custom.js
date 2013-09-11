@@ -313,10 +313,10 @@ jQuery(window).load(function($) {
 		jQuery(this).css({ 'width' : jQuery(this).attr('width'), 'height' : jQuery(this).attr('height') });
 	});
 	
-	api.bind("revolution.slide.onchange",function (e,data) {
+	/*api.bind("revolution.slide.onchange",function (e,data) {
 		var offsetLeft = jQuery('.wide-bannercontainer').find('.bullet.selected').position().left;
 		jQuery('.tp-timer-wrapper').css('left', offsetLeft);
-	});
+	});*/
 	
 	var counter = 0;
 	jQuery('.wide-bannercontainer .bullet').each(function(){
