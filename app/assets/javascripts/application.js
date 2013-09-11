@@ -13,4 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+
+//= require shadowbox/jquery
+//= require shadowbox/jquery.themepunch.plugins.min
+//= require shadowbox/jquery.themepunch.revolution.min
+//= require shadowbox/isotope
+//= require shadowbox/tabs
+//= require shadowbox/touch-swipe
+//= require shadowbox/ebor_carousel
+//= require shadowbox/custom
