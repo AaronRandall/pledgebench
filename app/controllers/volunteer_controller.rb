@@ -10,7 +10,7 @@ class VolunteerController < ApplicationController
     @volunteer = Volunteer.new(volunteer_params)
 
     if @volunteer.save
-      redirect_to root_path
+      redirect_to new_listing_path
     else
       render "new"
     end

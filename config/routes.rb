@@ -13,6 +13,8 @@ Pledgebench::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :home, only: [:index]
+  resources :listings
+
   scope "signup" do
     resources :volunteer, only: [:new, :create]
     resources :charity, only: [:new, :create]
