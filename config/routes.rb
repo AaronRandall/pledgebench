@@ -12,7 +12,9 @@ Pledgebench::Application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  resources :home
+  resources :home, only: [:index]
+  resources :signup, only: [:new, :create]
+  match '/signup',  to: 'signup#new', via: 'get'
 
   # Example resource route with options:
   #   resources :products do
