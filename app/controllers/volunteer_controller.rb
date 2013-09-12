@@ -10,6 +10,8 @@ class VolunteerController < ApplicationController
     @volunteer = Volunteer.new(volunteer_params)
 
     if @volunteer.save
+      session[:user_id] = @volunteer.id
+
       redirect_to new_listing_path
     else
       render "new"
