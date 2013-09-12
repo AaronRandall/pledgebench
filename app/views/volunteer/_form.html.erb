@@ -1,0 +1,49 @@
+<div class="one_half">
+  <%= form_for :volunteer, url: volunteer_index_path  do |f| %>
+
+    <% if @volunteer.errors.any? %>
+      <div class="alert danger">
+        <h4>Whoops, you've got <%= pluralize(@volunteer.errors.count, "error") %> to fix up</h4>
+        <ul>
+        <% @volunteer.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <p>
+      <%= f.label :firstname %><br>
+      <%= f.text_field :firstname %>
+    </p>
+
+    <p>
+      <%= f.label :surname %><br>
+      <%= f.text_field :surname %>
+    </p>
+
+    <p>
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </p>
+
+    <p>
+      <%= f.label :email_confirmation %><br>
+      <%= f.text_field :email_confirmation %>
+    </p>
+
+    <p>
+      <%= f.label :password %><br>
+      <%= f.password_field :password %>
+    </p>
+
+    <p>
+      <%= f.label :password_confirmation %><br>
+      <%= f.password_field :password_confirmation %>
+    </p>
+   
+    <p>
+      <%= f.submit "Create account" %>
+    </p>
+  <% end %>
+</div>
