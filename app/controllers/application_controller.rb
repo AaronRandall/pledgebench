@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
   private
   
   def current_user
-    # Currently a user is a volunteer only.  Will need to update for when charity signup/login exists.
-    @current_user ||= Volunteer.find(session[:user_id]) if session[:user_id]
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 end

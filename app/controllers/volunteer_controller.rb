@@ -2,12 +2,12 @@ class VolunteerController < ApplicationController
 
   def new
     puts params
-    @volunteer = Volunteer.new
+    @volunteer = User.new
   end
 
   def create
     puts params
-    @volunteer = Volunteer.new(volunteer_params)
+    @volunteer = User.new(volunteer_params)
 
     if @volunteer.save
       session[:user_id] = @volunteer.id

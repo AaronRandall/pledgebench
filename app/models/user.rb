@@ -1,4 +1,4 @@
-class Volunteer < ActiveRecord::Base
+class User < ActiveRecord::Base
   attr_accessor :password
 
   before_save :encrypt_password
@@ -7,9 +7,9 @@ class Volunteer < ActiveRecord::Base
   validates_confirmation_of :email, :password
 
   def self.authenticate(email, password)
-    volunteer = find_by_email(email)
-    if volunteer && volunteer.password_hash == BCrypt::Engine.hash_secret(password, volunteer.password_salt)
-      volunteer
+    user = find_by_email(email)
+    if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
+      user
     else
       nil
     end
