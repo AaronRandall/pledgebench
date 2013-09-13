@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 
 //= require shadowbox/jquery
 //= require shadowbox/jquery.themepunch.plugins.min

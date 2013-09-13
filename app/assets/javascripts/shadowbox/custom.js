@@ -9,7 +9,7 @@ window.selectnav=function(){"use strict";var e=function(e,t){function c(e){var t
 /*-----------------------------------------------------------------------------------*/
 jQuery(document).ready(function($){
 'use strict';
-
+  console.log("doc ready" + new Date());
 		selectnav('standard');
 
 });
