@@ -98,66 +98,18 @@
           <a id="nav-button" href="#"><i class="icon-reorder"></i></a>
           <ul>
             <li>
-              <a href="index.html" class="active">Homepage<i class="icon-home"></i></a>
+              <a href="/" class="active">Homepage<i class="icon-home"></i></a>
             </li>
             <li>
-              <a href="portfolio.html">Portfolio<i class="icon-th"></i></a>
-              <ul>
-                <li>
-                  <a href="portfolio.html">Default</a>
-                </li>
-                <li>
-                  <a href="portfolio-alt.html">Alternative</a>
-                </li>
-                <li>
-                  <a href="single-portfolio.html">Single Post</a>
-                </li>
-              </ul>
+              <a href="/login">Login<i class="icon-cogs"></i></a>
             </li>
             <li>
-              <a href="blog.html">Blog<i class="icon-file"></i></a>
-              <ul>
-                <li>
-                  <a href="blog.html">Default</a>
-                </li>
-                <li>
-                  <a href="blog-alt.html">Alternative</a>
-                </li>
-                <li>
-                  <a href="blog-sidebar.html">Blog W/Sidebar</a>
-                </li>
-                <li>
-                  <a href="single.html">Single Post</a>
-                </li>
-                
-                <li>
-                  <a href="single-sidebar.html">Single W/Sidebar</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="team.html">Team<i class="icon-user"></i></a>
-              <ul>
-                <li>
-                  <a href="team.html">Default</a>
-                </li>
-                <li>
-                  <a href="team-alt.html">Alternative</a>
-                </li>
-                <li>
-                  <a href="single-team.html">Single Member</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="elements.html">Elements<i class="icon-cogs"></i></a>
-            </li>
-            <li>
-              <a href="contact.html">Contact<i class="icon-map-marker"></i></a>
+              <a href="/logout">Logout<i class="icon-map-marker"></i></a>
             </li>
           </ul>
         </nav>
-        
+
+        <span style="float:right;padding-right:10px;"><%= "#{current_user.firstname} #{current_user.surname}" if current_user %></span>
       </header>
       
       <section class="content clearfix">
