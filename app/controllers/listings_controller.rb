@@ -1,4 +1,10 @@
 class ListingsController < ApplicationController
+  before_filter :authentication_required
+
+  def index
+    @listings = Listing.all
+  end
+
   def new
     @listing = Listing.new
   end

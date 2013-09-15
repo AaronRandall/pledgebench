@@ -1,0 +1,13 @@
+<div class="centered">
+  <h2>All listings</h2>
+  <h3><small>Here are all the current listings from Pledgebench volunteers.</small></h3>
+
+  <% @listings.each do |listing| %>
+    <ul>
+      <li>Title: <%= listing.title %></li>
+      <li>Description: <%= listing.description %></li>
+      <li>User email: <%= listing.user.email %></li>
+    </ul>
+  <% end %>
+  
+</div>
