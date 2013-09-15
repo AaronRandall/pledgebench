@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :listings
+
   attr_accessor :password
 
   before_save do self.email.downcase! end

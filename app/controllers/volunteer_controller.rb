@@ -1,12 +1,9 @@
 class VolunteerController < ApplicationController
-
   def new
-    puts params
     @volunteer = User.new
   end
 
   def create
-    puts params
     @volunteer = User.new(volunteer_params)
 
     if @volunteer.save
@@ -23,5 +20,4 @@ class VolunteerController < ApplicationController
   def volunteer_params
     params.required(:volunteer).permit(:firstname, :surname, :email, :email_confirmation, :password, :password_confirmation)
   end
-
 end
