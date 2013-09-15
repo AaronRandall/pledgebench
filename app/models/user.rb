@@ -1,13 +1,14 @@
 class User < ActiveRecord::Base
   attr_accessor :password
 
+  before_save do self.email.downcase! end
   before_save :encrypt_password
 
   validates_presence_of :firstname, :surname, :email, :password
   validates_confirmation_of :email, :password
 
   def self.authenticate(email, password)
-    user = find_by_email(email)
+    user = find_by_email(email.downcase)
     if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
       user
     else

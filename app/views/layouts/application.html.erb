@@ -19,7 +19,10 @@
 </head>
 
 <body class="index" data-no-turbolink>
-
+  <% flash.each do |name, msg| %>
+    <div class="flash alert <%= name %>"><%= msg %></div>
+  <% end %>
+        
     <div class="wrapper clearfix">
       
       <header id="main" class="full_width">
@@ -28,77 +31,32 @@
             Pledge<span>bench.</span> <small>Donate your time.</small>
           </a>
         </h1>
-        
+
         <!--MARKUP FOR ALTERNATIVE NAVIGATION STYLE-->
-        <!--
         <ul id="standard" class="clearfix">
-          <li>
-            <a href="index.html" class="active">Homepage<i class="icon-home"></i></a>
-          </li>
-          <li>
-            <a href="portfolio.html">Portfolio<i class="icon-th"></i></a>
-            <ul>
-              <li>
-                <a href="portfolio.html">Default</a>
-              </li>
-              <li>
-                <a href="portfolio-alt.html">Alternative</a>
-              </li>
-              <li>
-                <a href="single-portfolio.html">Single Post</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="blog.html">Blog<i class="icon-file"></i></a>
-            <ul>
-              <li>
-                <a href="blog.html">Default</a>
-              </li>
-              <li>
-                <a href="blog-alt.html">Alternative</a>
-              </li>
-              <li>
-                <a href="blog-sidebar.html">Blog W/Sidebar</a>
-              </li>
-              <li>
-                <a href="single.html">Single Post</a>
-              </li>
-              
-              <li>
-                <a href="single-sidebar.html">Single W/Sidebar</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="team.html">Team<i class="icon-user"></i></a>
-            <ul>
-              <li>
-                <a href="team.html">Default</a>
-              </li>
-              <li>
-                <a href="team-alt.html">Alternative</a>
-              </li>
-              <li>
-                <a href="single-team.html">Single Member</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="elements.html">Elements<i class="icon-cogs"></i></a>
-          </li>
-          <li>
-            <a href="contact.html">Contact<i class="icon-map-marker"></i></a>
-          </li>
+          <% if current_user %>
+            <li>
+              <a href="/listings/new">New listing<i class="icon-th"></i></a>
+            </li>
+            <li>
+              <a href="/logout">Log out<i class="icon-th"></i></a>
+            </li>
+          <% else %>
+            <li>
+              <a href="/login">Log in<i class="icon-th"></i></a>
+            </li>
+            <li>
+              <a href="/signup" class="active">Sign up<i class="icon-home"></i></a>
+            </li>
+          <% end %>
         </ul>
-        -->
         <!--END ALTERNATE NAVIGATION MARKUP-->
-        
+        <!-- 
         <nav id="main_nav">
           <a id="nav-button" href="#"><i class="icon-reorder"></i></a>
           <ul>
             <li>
-              <a href="/" class="active">Homepage<i class="icon-home"></i></a>
+              <a href="/signup">Signup<i class="icon-cogs"></i></a>
             </li>
             <li>
               <a href="/login">Login<i class="icon-cogs"></i></a>
@@ -108,8 +66,9 @@
             </li>
           </ul>
         </nav>
+        -->
 
-        <span style="float:right;padding-right:10px;"><%= "#{current_user.firstname} #{current_user.surname}" if current_user %></span>
+        <span style="text-transform:uppercase;float:right;padding:10px;"><%= "#{current_user.firstname} #{current_user.surname}" if current_user %></span>
       </header>
       
       <section class="content clearfix">
