@@ -25,7 +25,8 @@ Pledgebench::Application.routes.draw do
     resources :charity, only: [:new, :create]
   end
 
-  match '/signup',  to: 'signup#new', via: 'get'
+  match '/signup',   to: 'signup#new', via: 'get'
+  match ':username', to: 'volunteer#show', via: 'get'
 
   # Example resource route with options:
   #   resources :products do

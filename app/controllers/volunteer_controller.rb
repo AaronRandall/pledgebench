@@ -1,4 +1,8 @@
 class VolunteerController < ApplicationController
+  def show
+    @volunteer = User.find_by_username(params[:username])
+  end
+
   def new
     @volunteer = User.new
   end
@@ -18,6 +22,6 @@ class VolunteerController < ApplicationController
   private
 
   def volunteer_params
-    params.required(:volunteer).permit(:firstname, :surname, :email, :email_confirmation, :password, :password_confirmation)
+    params.required(:volunteer).permit(:firstname, :surname, :email, :email_confirmation, :password, :password_confirmation, :username)
   end
 end

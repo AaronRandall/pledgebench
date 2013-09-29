@@ -6,8 +6,9 @@ class User < ActiveRecord::Base
   before_save do self.email.downcase! end
   before_save :encrypt_password
 
-  validates_presence_of :firstname, :surname, :email, :password
+  validates_presence_of :firstname, :surname, :email, :password, :username
   validates_confirmation_of :email, :password
+  validates_uniqueness_of :email, :username
 
   def self.authenticate(email, password)
     user = find_by_email(email.downcase)
