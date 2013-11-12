@@ -5,7 +5,7 @@ module Mailer
   ANALYTICS_EMAIL_RECIPIENT='contact@pledgebench.com'
 
   def self.send_analytics_email(subject, body)
-    m = Mandrill::API.new ENV[MANDRILL_API_KEY]
+    m = Mandrill::API.new ENV['MANDRILL_API_KEY']
     message = {  
      :subject => subject,  
      :from_name => 'Pledgebench',
