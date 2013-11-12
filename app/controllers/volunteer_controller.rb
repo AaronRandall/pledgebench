@@ -1,4 +1,6 @@
 class VolunteerController < ApplicationController
+  require 'mailer'
+
   def show
     @volunteer = User.find_by_username(params[:username])
   end
@@ -12,7 +14,7 @@ class VolunteerController < ApplicationController
 
     if @volunteer.save
       session[:user_id] = @volunteer.id
-
+      send_create_volunteer_email_event(@volunteer.username)
       redirect_to new_listing_path
     else
       render "new"
@@ -22,6 +24,18 @@ class VolunteerController < ApplicationController
   private
 
   def volunteer_params
-    params.required(:volunteer).permit(:firstname, :surname, :email, :email_confirmation, :password, :password_confirmation, :username)
+    params.required(:volunteer).permit(
+      :firstname,
+      :surname,
+      :email,
+      :email_confirmation,
+      :password,
+      :password_confirmation,
+      :username
+    )
+  end
+
+  def send_create_volunteer_email_event(username)
+    Mailer.send_analytics_email("New volunteer registered with username: #{username}", "Awesome :)")
   end
 end
