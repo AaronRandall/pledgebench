@@ -47,5 +47,7 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'rails_12factor', group: :production
-gem "font-awesome-rails"
-gem "bcrypt-ruby", :require => "bcrypt"
+gem 'font-awesome-rails'
+gem 'bcrypt-ruby', :require => 'bcrypt'
+
+gem 'mandrill-api'
