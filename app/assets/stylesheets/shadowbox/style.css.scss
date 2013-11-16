@@ -134,6 +134,10 @@ input, textarea {
 	width: 50%; background: #f8f9fa; border: 1px solid #e6e9eb; min-height: 40px; font-size: 16px; padding: 0 10px; font-family: 'Raleway', sans-serif;
 }
 
+input[type="checkbox"] {
+  width: auto;
+}
+
 input[type="submit"] {
 	width: auto; font-size: 14px; cursor: pointer;
 }
