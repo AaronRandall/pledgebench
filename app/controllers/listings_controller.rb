@@ -23,6 +23,14 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.required(:listing).permit(:title, :description)
+    params.required(:listing).permit(
+      :title, 
+      :description,
+      :website,
+      :is_remote,
+      :town,
+      :county,
+      :postcode,
+      :enabled)
   end
 end

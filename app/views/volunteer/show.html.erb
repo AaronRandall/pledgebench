@@ -1,1 +1,22 @@
-<%= @volunteer.firstname %>
+<h3><%= @volunteer.firstname %>'s Profile</h3>
+
+<h2>Listings</h2>
+
+<% if @volunteer.listings.any? %>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Volunteer email</th>
+    </tr>
+    <% @volunteer.listings.each do |listing| %>
+      <tr>
+        <td><%= listing.title %></td>
+        <td><%= listing.description %></td>
+        <td><%= listing.user.email %></td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  No active listings, why not <a href="/listings/new">create one now?</a>
+<% end %>

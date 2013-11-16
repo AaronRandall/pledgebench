@@ -17,13 +17,38 @@
     <% end %>
 
     <p>
-      <%= f.label :title %><br>
-      <%= f.text_field :title %>
+      <%= f.label :title, "Title (required)" %><br>
+      <%= f.text_field :title, :placeholder => "e.g. Web development, photography, magician, lawyer" %>
     </p>
 
     <p>
-      <%= f.label :description %><br>
-      <%= f.text_field :description %>
+      <%= f.label :description, "Description (required)" %><br>
+      <%= f.text_area :description, :placeholder => "A detailed description of what you're offering" %>
+    </p>
+
+    <p>
+      <%= f.label :website, "Website (optional)" %><br>
+      <%= f.text_field :website, :placeholder => "A website which shows more about what you do" %>
+    </p>
+
+    <p>
+      <%= f.label :is_remote, "Is this a remote service? i.e something you can provide over email, Skype, etc?" %><br>
+      <%= f.check_box :is_remote %>
+    </p>
+
+    <p>
+      <%= f.label :town, "Town (optional)" %><br>
+      <%= f.text_field :town, :placeholder => "Your town" %>
+    </p>
+
+    <p>
+      <%= f.label :county, "County (optional)" %><br>
+      <%= f.text_field :county, :placeholder => "Your county" %>
+    </p>
+
+    <p>
+      <%= f.label :postcode, "Postcode (optional)" %><br>
+      <%= f.text_field :postcode, :placeholder => "Your postcode" %>
     </p>
    
     <p>
