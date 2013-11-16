@@ -14,9 +14,20 @@ class ListingsController < ApplicationController
     @listing.user_id = current_user.id
 
     if @listing.save
-      redirect_to root_path, :notice => "Listing created!"
+      redirect_to "/#{current_user.username}", :notice => "Listing created!"
     else
       render "new"
+    end
+  end
+
+  def destroy
+    if @listing = Listing.find_by_id(params[:id])
+      if @listing.user_id == current_user.id
+        @listing.delete
+        redirect_to "/#{current_user.username}", :notice => "Listing deleted!"
+      else
+        redirect_to root_path, :flash => { :error => "You don't have permission to do that." }
+      end
     end
   end
 

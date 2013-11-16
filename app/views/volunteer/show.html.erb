@@ -1,22 +1,28 @@
-<h3><%= @volunteer.firstname %>'s Profile</h3>
+<h3><%= @volunteer.firstname %>'s profile</h3>
 
-<h2>Listings</h2>
+<h2>Your listings</h2>
 
 <% if @volunteer.listings.any? %>
-  <table>
+  <table style="width:100%;">
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Volunteer email</th>
+      <th><b>Title</b></th>
+      <th><b>Description</b></th>
+      <th></th>
     </tr>
     <% @volunteer.listings.each do |listing| %>
       <tr>
         <td><%= listing.title %></td>
         <td><%= listing.description %></td>
-        <td><%= listing.user.email %></td>
+        <td>
+          <%= form_for :listing, :url => listing_path(listing.id), :html => {:method => :delete} do |f| %>
+            <%= f.submit "Delete", data: { confirm: "Are you sure?" } %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </table>
 <% else %>
   No active listings, why not <a href="/listings/new">create one now?</a>
 <% end %>
+
+<h2>Your details</h2>

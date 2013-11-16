@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validates_presence_of :firstname, :surname, :email, :password, :username
   validates_confirmation_of :email, :password
   validates_uniqueness_of :email, :username
+  validates :username, format: { with: /\A[a-zA-Z0-9]+\Z/, :message => "Username cannot contain spaces or special characters" }
 
   def self.authenticate(email, password)
     user = find_by_email(email.downcase)
