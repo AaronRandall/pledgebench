@@ -14,6 +14,7 @@ class ListingsController < ApplicationController
     @listing.user_id = current_user.id
 
     if @listing.save
+      send_create_listing_email_event(current_user.username)
       redirect_to "/#{current_user.username}", :notice => "Listing created!"
     else
       render "new"
@@ -43,5 +44,9 @@ class ListingsController < ApplicationController
       :county,
       :postcode,
       :enabled)
+  end
+
+  def send_create_listing_email_event(username)
+    Mailer.send_analytics_email("New listing created by: #{username}", "Awesome :)")
   end
 end
