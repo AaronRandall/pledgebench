@@ -1,8 +1,4 @@
 <div class="centered">
-
-<h2>Create a new listing</h2>
-<h3><small>Create a searchable listing that'll allow charities to find the services you're volunteering.</small></h3>
-
   <%= form_for @listing do |f| %>
 
     <% if @listing.errors.any? %>
@@ -18,12 +14,12 @@
 
     <p>
       <%= f.label :title, "Title (required)" %><br>
-      <%= f.text_field :title, :placeholder => "e.g. Web development, photography, legal advice" %>
+      <%= f.text_field :title, :placeholder => "e.g. Web development, photography, accountancy" %>
     </p>
 
     <p>
       <%= f.label :description, "Description (required)" %><br>
-      <%= f.text_area :description, :placeholder => "A detailed description of what you're offering" %>
+      <%= f.text_area :description, :placeholder => "e.g. I am an enthusiastic photographer with many years experience and would love to offer my services to charities free of charge." %>
     </p>
 
     <p>
