@@ -250,7 +250,7 @@ dt:hover .icon-muted, blockquote:hover .icon-muted {
 }
 
 .small-padding {
-	padding: 50px 0 0;
+	padding: 25px 0 0;
 }
 
 .padding-top {
@@ -638,12 +638,17 @@ ul.carousel-list.three-dee li.translate-left:hover a:after, .the_portfolio.three
 	display: block; padding: 20px 24px 20px 20px;
 }
 
-.portfolio-alt-details p, .portfolio-alt-details h3.epsilon {
+.portfolio-alt-details p, .portfolio-alt-details h4.epsilon {
 	margin-bottom: 0; color: #fff;
 }
 
 .meta {
 	font-size: 12px; font-style: italic;
+}
+
+h4.epsilon i
+{
+  min-height: 60px;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -1274,6 +1279,18 @@ h2.resp-accordion.resp-tab-active:hover::before {
 	body {
 		padding-bottom: 0;
 	}
+
+  .small-tagline
+  {
+    display: none;
+  }
+
+  #tagline-button
+  {
+    padding-top: 0;
+    height: 35px;
+    font-size: 15px;
+  }
 	
 	.wrapper { width:90%; margin: 5%; position:relative; padding: 40px; }
 	.one_half, .one_third, .two_thirds, .one_fourth, .one_fifth, .two_fifth, .three_fifth, .four_fifth, .one_sixth, .five_sixth { width: 100%; }
