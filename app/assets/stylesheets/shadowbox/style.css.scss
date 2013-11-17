@@ -1245,7 +1245,8 @@ h2.resp-accordion.resp-tab-active:hover::before {
 		display: none !important;
 	}
 	
-	#standard { display: none; }
+  /* Disabling the responsive JS navbar */
+	/*#standard { display: none; }*/
 	  
 	.selectnav { display: block; }
 	
