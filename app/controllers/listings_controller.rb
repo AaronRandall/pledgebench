@@ -1,4 +1,6 @@
 class ListingsController < ApplicationController
+  require 'mailer'
+
   before_filter :authentication_required
 
   def index

@@ -5,6 +5,8 @@ module Mailer
   ANALYTICS_EMAIL_RECIPIENT='aaronjrandall@gmail.com'
 
   def self.send_analytics_email(subject, body)
+    return if Rails.env.development?
+
     m = Mandrill::API.new ENV['MANDRILL_API_KEY']
     message = {  
      :subject => subject,  
