@@ -139,7 +139,15 @@ input, textarea {
 	width: 50%; background: #f8f9fa; border: 1px solid #e6e9eb; min-height: 40px; font-size: 16px; padding: 0 10px; font-family: 'Raleway', sans-serif;
 }
 
+input, select {
+	width: 50%; background: #f8f9fa; border: 1px solid #e6e9eb; min-height: 40px; font-size: 16px; padding: 0 10px; font-family: 'Raleway', sans-serif;
+}
+
 input[type="checkbox"] {
+  width: auto;
+}
+
+input[type="radio"] {
   width: auto;
 }
 
@@ -163,6 +171,13 @@ textarea {
 .alert.error
 {
 	background: #ffe5e3; color: #d90f00; border-color: #f9bbb8;
+}
+
+.field_with_errors > label
+{
+  background: #ffe5e3;
+  color: #d90f00;
+  border-color: #f9bbb8;
 }
 
 .alert.warning

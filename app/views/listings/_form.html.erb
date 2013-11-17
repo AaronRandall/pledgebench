@@ -27,32 +27,63 @@
     </p>
 
     <p>
-      <%= f.label :website, "Website (optional)" %><br>
+      <%= f.label :website, "Your website (optional)" %><br>
       <%= f.text_field :website, :placeholder => "A website which shows more about what you do" %>
     </p>
 
     <p>
-      <%= f.label :is_remote, "Is this a remote service? i.e something you can provide over email, Skype, etc?" %><br>
-      <%= f.check_box :is_remote %>
+      <%= f.label :is_remote, "Can you provide this service remotely? (over email, Skype, etc)" %><br>
+      <%= f.radio_button :is_remote, true %>
+      <%= f.label :is_remote_yes, "Yes" %>&nbsp;&nbsp;
+      <%= f.radio_button :is_remote, false %>
+      <%= f.label :is_remote_no, "No" %>
     </p>
 
-    <p>
-      <%= f.label :town, "Town (optional)" %><br>
-      <%= f.text_field :town, :placeholder => "Your town" %>
-    </p>
+    <div id="address-section">
+      <p>
+        <%= f.label :town, "Town" %><br>
+        <%= f.text_field :town, :placeholder => "Your town" %>
+      </p>
 
-    <p>
-      <%= f.label :county, "County (optional)" %><br>
-      <%= f.text_field :county, :placeholder => "Your county" %>
-    </p>
+      <p>
+        <%= f.label :county, "County" %><br>
+        <%= render partial: "county_selector" %>
+      </p>
 
-    <p>
-      <%= f.label :postcode, "Postcode (optional)" %><br>
-      <%= f.text_field :postcode, :placeholder => "Your postcode" %>
-    </p>
+      <p>
+        <%= f.label :postcode, "Postcode (optional)" %><br>
+        <%= f.text_field :postcode, :placeholder => "Your postcode" %>
+      </p>
+    </div>
    
     <p>
       <%= f.submit "Create listing" %>
     </p>
   <% end %>
 </div>
+
+<script>
+$(document).ready(function() {
+  showHideAddressFields();
+
+  $("input[name$='listing[is_remote]']").click(function() {
+    showHideAddressFields();
+  });
+
+});
+
+function showHideAddressFields() {
+  // By default, hide the address field
+  var selectedValue = "true";
+
+  if($("input[name$='listing[is_remote]']").is(':checked')) {
+    selectedValue = $("input[name$='listing[is_remote]']:checked").val();
+  }
+
+  if (selectedValue == "true") {
+    $("#address-section").slideUp(); 
+  } else {
+    $("#address-section").slideDown(); 
+  }
+}
+</script>

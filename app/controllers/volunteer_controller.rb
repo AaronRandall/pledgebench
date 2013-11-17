@@ -1,6 +1,8 @@
 class VolunteerController < ApplicationController
   require 'mailer'
 
+  before_filter :authentication_required, :only => [:show]
+
   def show
     @volunteer = User.find_by_username(params[:username])
   end
