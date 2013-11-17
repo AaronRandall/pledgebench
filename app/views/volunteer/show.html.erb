@@ -14,7 +14,10 @@
         <td><%= listing.title %></td>
         <td><%= listing.description %></td>
         <td>
-          <%= form_for :listing, :url => listing_path(listing.id), :html => {:method => :delete} do |f| %>
+          <%= form_for :listing, :url => edit_listing_path(listing.id), :html => {:method => :get, :class => "action-button"} do |f| %>
+            <%= f.submit "Edit" %>
+          <% end %>
+          <%= form_for :listing, :url => listing_path(listing.id), :html => {:method => :delete, :class => "action-button"} do |f| %>
             <%= f.submit "Delete", data: { confirm: "Are you sure?" } %>
           <% end %>
         </td>

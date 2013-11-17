@@ -3,7 +3,7 @@
 <h2>Create a new listing</h2>
 <h3><small>Create a searchable listing that'll allow charities to find the services you're volunteering.</small></h3>
 
-  <%= form_for :listing, url: listings_path  do |f| %>
+  <%= form_for @listing  do |f| %>
 
     <% if @listing.errors.any? %>
       <div class="alert danger">
