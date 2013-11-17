@@ -3,7 +3,7 @@
 <h2>Create a new listing</h2>
 <h3><small>Create a searchable listing that'll allow charities to find the services you're volunteering.</small></h3>
 
-  <%= form_for @listing  do |f| %>
+  <%= form_for @listing do |f| %>
 
     <% if @listing.errors.any? %>
       <div class="alert danger">
@@ -57,7 +57,7 @@
     </div>
    
     <p>
-      <%= f.submit "Create listing" %>
+      <%= f.submit "#{@listing.new_record? ? "Create" : "Update"} listing" %>
     </p>
   <% end %>
 </div>
