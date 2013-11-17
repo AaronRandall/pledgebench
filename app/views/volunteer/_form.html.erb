@@ -17,37 +17,37 @@
     <% end %>
 
     <p>
-      <%= f.label :firstname %><br>
+      <%= f.label :firstname %><%= render partial: "shared/required_field" %><br>
       <%= f.text_field :firstname %>
     </p>
 
     <p>
-      <%= f.label :surname %><br>
+      <%= f.label :surname %><%= render partial: "shared/required_field" %><br>
       <%= f.text_field :surname %>
     </p>
 
     <p>
-      <%= f.label :email %><br>
+      <%= f.label :email %><%= render partial: "shared/required_field" %><br>
       <%= f.text_field :email %>
     </p>
 
     <p>
-      <%= f.label :email_confirmation %><br>
+      <%= f.label :email_confirmation %><%= render partial: "shared/required_field" %><br>
       <%= f.text_field :email_confirmation %>
     </p>
 
     <p>
-      <%= f.label :password %><br>
+      <%= f.label :password %><%= render partial: "shared/required_field" %><br>
       <%= f.password_field :password %>
     </p>
 
     <p>
-      <%= f.label :password_confirmation %><br>
+      <%= f.label :password_confirmation %><%= render partial: "shared/required_field" %><br>
       <%= f.password_field :password_confirmation %>
     </p>
 
     <p>
-      <%= f.label :username, "Username" %><br>
+      <%= f.label :username, "Username (no spaces or special characters)" %><%= render partial: "shared/required_field" %><br>
       <%= f.text_field :username %>
     </p>
    

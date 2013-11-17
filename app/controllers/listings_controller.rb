@@ -67,6 +67,7 @@ class ListingsController < ApplicationController
       :town,
       :county,
       :postcode,
+      :availability,
       :enabled)
   end
 

@@ -28,6 +28,8 @@ Pledgebench::Application.routes.draw do
   match '/signup',   to: 'signup#new', via: 'get'
   match ':username', to: 'volunteer#show', via: 'get'
 
+  match ':not_found' => redirect('/'), :constraints => { :not_found => /.*/ }, via: [:get, :post]
+
   # Example resource route with options:
   #   resources :products do
   #     member do

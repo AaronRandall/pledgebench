@@ -13,22 +13,27 @@
     <% end %>
 
     <p>
-      <%= f.label :title, "Title (required)" %><br>
+      <%= f.label :title, "Title" %><%= render partial: "shared/required_field" %><br>
       <%= f.text_field :title, :placeholder => "e.g. Web development, photography, accountancy" %>
     </p>
 
     <p>
-      <%= f.label :description, "Description (required)" %><br>
+      <%= f.label :description, "Description" %><%= render partial: "shared/required_field" %><br>
       <%= f.text_area :description, :placeholder => "e.g. I am an enthusiastic photographer with many years experience and would love to offer my services to charities free of charge." %>
     </p>
 
     <p>
-      <%= f.label :website, "Your website (optional)" %><br>
+      <%= f.label :availability, "Availability" %><%= render partial: "shared/required_field" %><br>
+      <%= f.text_area :availability, :placeholder => "e.g. Saturdays and Sundays between 11am-5pm" %>
+    </p>
+
+    <p>
+      <%= f.label :website, "Your website" %><br>
       <%= f.text_field :website, :placeholder => "A website which shows more about what you do" %>
     </p>
 
     <p>
-      <%= f.label :is_remote, "Can you provide this service remotely? (over email, Skype, etc)" %><br>
+      <%= f.label :is_remote, "Can you provide this service remotely? (e.g. via email, Skype, etc)" %><%= render partial: "shared/required_field" %><br>
       <%= f.radio_button :is_remote, true %>
       <%= f.label :is_remote_yes, "Yes" %>&nbsp;&nbsp;
       <%= f.radio_button :is_remote, false %>
@@ -37,21 +42,21 @@
 
     <div id="address-section">
       <p>
-        <%= f.label :town, "Town" %><br>
+        <%= f.label :town, "Town" %><%= render partial: "shared/required_field" %><br>
         <%= f.text_field :town, :placeholder => "Your town" %>
       </p>
 
       <p>
-        <%= f.label :county, "County" %><br>
+        <%= f.label :county, "County" %><%= render partial: "shared/required_field" %><br>
         <%= render partial: "county_selector" %>
       </p>
 
       <p>
-        <%= f.label :postcode, "Postcode (optional)" %><br>
+        <%= f.label :postcode, "Postcode" %><br>
         <%= f.text_field :postcode, :placeholder => "Your postcode" %>
       </p>
     </div>
-   
+
     <p>
       <%= f.submit "#{@listing.new_record? ? "Create" : "Update"} listing" %>
     </p>
@@ -60,6 +65,7 @@
 
 <script>
 $(document).ready(function() {
+  $("#address-section").hide();
   showHideAddressFields();
 
   $("input[name$='listing[is_remote]']").click(function() {

@@ -5,6 +5,7 @@ class VolunteerController < ApplicationController
 
   def show
     @volunteer = User.find_by_username(params[:username])
+    redirect_to root_path unless @volunteer
   end
 
   def new
