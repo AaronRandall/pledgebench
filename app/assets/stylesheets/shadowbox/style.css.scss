@@ -79,6 +79,12 @@ a, input[type="submit"] {
 	transition: all 150ms ease-in-out;
 }
 
+a#tagline-button:hover
+{
+  background: white;
+  color:#1d9382;
+}
+
 a:hover {
 	text-decoration: none; color: #1d9382;
 }
