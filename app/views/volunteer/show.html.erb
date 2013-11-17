@@ -25,11 +25,3 @@
 <% else %>
   <p>No active listings, why not <a href="/listings/new">create one now?</a></p>
 <% end %>
-
-<hr />
-<h2>Your account details</h2>
-<p>
-  Name: <%= "#{@volunteer.firstname} #{@volunteer.surname}" %><br />
-  Username: <%= @volunteer.username %><br />
-  Email: <%= @volunteer.email %>
-</p>

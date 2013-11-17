@@ -18,7 +18,7 @@ class VolunteerController < ApplicationController
     if @volunteer.save
       session[:user_id] = @volunteer.id
       send_create_volunteer_email_event(@volunteer.username)
-      redirect_to new_listing_path
+      redirect_to new_listing_path, :notice => "Woohoo, welcome to Pledgebench! Let's create a listing (below) to get you setup."
     else
       render "new"
     end
@@ -31,7 +31,6 @@ class VolunteerController < ApplicationController
       :firstname,
       :surname,
       :email,
-      :email_confirmation,
       :password,
       :password_confirmation,
       :username
