@@ -1,0 +1,73 @@
+<div class="centered">
+
+<h2>Charity signup</h2>
+<h3><small>We need some basic info from you, then you'll be good to go.</small></h3>
+
+  <%= form_for :charity_admin, url: charity_index_path do |f| %>
+
+    <% if @charity_admin.errors.any? || @charity.errors.any? %>
+      <div class="alert danger">
+        <h4>Whoops, you've got <%= pluralize(@charity_admin.errors.count + @charity.errors.count, "error") %> to fix up</h4>
+        <ul>
+        <% @charity_admin.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        <% @charity.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <p>
+      <%= f.label :firstname %><%= render partial: "shared/required_field" %><br>
+      <%= f.text_field :firstname %>
+    </p>
+
+    <p>
+      <%= f.label :surname %><%= render partial: "shared/required_field" %><br>
+      <%= f.text_field :surname %>
+    </p>
+
+    <p>
+      <%= f.label :email %><%= render partial: "shared/required_field" %><br>
+      <%= f.text_field :email %>
+    </p>
+
+    <p>
+      <%= f.label :password %><%= render partial: "shared/required_field" %><br>
+      <%= f.password_field :password %>
+    </p>
+
+    <p>
+      <%= f.label :password_confirmation %><%= render partial: "shared/required_field" %><br>
+      <%= f.password_field :password_confirmation %>
+    </p>
+
+    <p>
+      <%= f.label :username, "Username (no spaces or special characters)" %><%= render partial: "shared/required_field" %><br>
+      <%= f.text_field :username %>
+    </p>
+
+    <%= fields_for :charity do |c| %>
+      <p>
+        <%= c.label :name, "Charity name" %><%= render partial: "shared/required_field" %><br />
+        <%= c.text_field :name %>
+      </p>
+
+      <p>
+        <%= c.label :registered_charity_number %><br />
+        <%= c.text_field :registered_charity_number %>
+      </p>
+
+      <p>
+        <%= c.label :website, "Charity website" %><br />
+        <%= c.text_field :website %>
+      </p>
+    <% end %>
+   
+    <p>
+      <%= f.submit "Create account" %>
+    </p>
+  <% end %>
+</div>

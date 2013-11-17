@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :listings
+  has_one :charity
 
   attr_accessor :password
 
@@ -9,7 +10,7 @@ class User < ActiveRecord::Base
   validates_presence_of :firstname, :surname, :email, :password, :username
   validates_confirmation_of :password
   validates_uniqueness_of :email, :username
-  validates :username, format: { with: /\A[a-zA-Z0-9]+\Z/, :message => "Username cannot contain spaces or special characters" }
+  validates :username, format: { with: /\A[a-zA-Z0-9]+\Z/, :message => "cannot contain spaces or special characters" }
 
   def self.authenticate(email, password)
     user = find_by_email(email.downcase)
