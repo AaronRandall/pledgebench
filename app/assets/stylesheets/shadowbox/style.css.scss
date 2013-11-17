@@ -1338,6 +1338,14 @@ h2.resp-accordion.resp-tab-active:hover::before {
 @media only screen and (min-width: 480px) and (max-width: 767px) {}
 
 @media only screen and (max-width: 550px) {
+
+  input, textarea {
+    width: 100%;
+  }
+
+  input, select {
+    width: 100%;
+  }
 	.wrapper { padding: 30px; }
 	.the_portfolio.three-dee li, .the_portfolio.alt li { display: inline-block; width: 100%; }
 	h1.logo small { display: none; }
